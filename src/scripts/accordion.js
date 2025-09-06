@@ -80,10 +80,19 @@ function initializeAccordion(accordion) {
   });
 }
 
-// Initialize all accordions when DOM is loaded
-document.addEventListener("DOMContentLoaded", function () {
+function initAllAccordions() {
   const accordions = document.querySelectorAll(".accordion");
   accordions.forEach((accordion) => {
     initializeAccordion(accordion);
   });
-});
+}
+
+// Initialize saat DOM loaded
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initAllAccordions);
+} else {
+  initAllAccordions(); // DOM sudah loaded
+}
+
+// Export function untuk dipanggil manual
+window.initAllAccordions = initAllAccordions;

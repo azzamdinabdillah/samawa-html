@@ -91,6 +91,53 @@ function changeAssetPaths() {
       //   console.log(`Changed href: ${hrefAttribute} -> ${newHref}`);
     }
   });
+
+  const cssLinks = document.querySelectorAll("link[href]");
+  cssLinks.forEach((link) => {
+    const hrefAttribute = link.getAttribute("href");
+
+    // Cek apakah href dimulai dengan / dan bukan external link
+    if (
+      hrefAttribute &&
+      hrefAttribute.startsWith("/") &&
+      !hrefAttribute.startsWith("http")
+    ) {
+      const newHref = directory + hrefAttribute;
+      link.href = newHref;
+      //   console.log(`Changed CSS href: ${hrefAttribute} -> ${newHref}`);
+    }
+  });
+
+  // Ambil semua tag script dan ubah src nya dengan reload
+  const scripts = document.querySelectorAll("script[src]");
+  scripts.forEach((script) => {
+    const srcAttribute = script.getAttribute("src");
+
+    // Cek apakah src dimulai dengan / dan bukan external link
+    if (
+      srcAttribute &&
+      srcAttribute.startsWith("/") &&
+      !srcAttribute.startsWith("http")
+    ) {
+      const newSrc = directory + srcAttribute;
+
+      // Buat script element baru
+      const newScript = document.createElement("script");
+      newScript.src = newSrc;
+
+      // Copy semua attributes dari script lama (kecuali src)
+      Array.from(script.attributes).forEach((attr) => {
+        if (attr.name !== "src") {
+          newScript.setAttribute(attr.name, attr.value);
+        }
+      });
+
+      // Ganti script lama dengan yang baru
+      script.parentNode.replaceChild(newScript, script);
+
+      console.log(`Reloaded script: ${srcAttribute} -> ${newSrc}`);
+    }
+  });
 }
 
 // Jalankan script saat halaman dimuat
