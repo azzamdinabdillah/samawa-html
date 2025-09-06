@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-pink: #ff48b6;
+  --color-brown: #5c2d2d;
+  --color-green: #22c55e;
+  --color-gray: #f7f7f9;
+  --color-red: #07b704;
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+html {
+  scroll-padding-top: 130px; /* tinggi navbar */
+}
+
+.max-w-1130 {
+  @apply max-w-[1130px];
+}
+
+.px-global {
+  @apply px-4 md:px-6 xl:px-0;
+}
+
+.text-14 {
+  @apply text-xs md:text-sm;
+}
+
+.text-24 {
+  @apply text-lg md:text-xl lg:text-2xl;
+}
+
+.text-28 {
+  @apply text-lg md:text-xl lg:text-2xl xl:text-[28px];
+}
+
+.text-16 {
+  @apply text-sm md:text-base lg:text-base;
+}
+
+.text-18 {
+  @apply text-sm md:text-base lg:text-lg;
+}
+
+.text-19 {
+  @apply text-sm md:text-base lg:text-lg xl:text-[19px];
+}
+
+.text-20 {
+  /* @apply text-sm md:text-base lg:text-lg xl:text-[20px]; */
+  @apply text-base lg:text-lg xl:text-[20px];
+}
+
+.text-26 {
+  @apply text-lg md:text-xl lg:text-2xl xl:text-[26px];
+}
+
+.text-15 {
+  @apply text-sm md:text-sm lg:text-[15px];
+}
+
+.text-13 {
+  @apply text-xs md:text-sm lg:text-[13px];
+}
+
+.text-pink {
+  @apply text-[#ff48b6];
+}
+
+.bg-pink {
+  @apply bg-[#ff48b6];
+}
+
+.text-30 {
+  @apply text-[22px] md:text-2xl lg:text-[30px];
+}
+
+.py-70 {
+  @apply py-8 md:py-14 lg:py-[70px];
+}
+
+.gap-17_5 {
+  @apply flex flex-col gap-4 md:gap-5 lg:gap-7.5;
+}
+
+.gap-20 {
+  @apply gap-3.5 md:gap-4 lg:gap-5;
+}
+
+.gap-30 {
+  @apply gap-4 md:gap-5 lg:gap-7.5;
+}
+
+.p-30 {
+  @apply p-3.5 md:p-5 lg:p-7.5;
+}
+
+.marquee-container {
+  display: flex;
+  width: max-content;
+  animation-name: marquee;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 20s; /* default untuk mobile */
+}
+
+@media (min-width: 1024px) {
+  .marquee-container {
+    animation-duration: 20s; /* override untuk layar besar */
+  }
+}
+
+.marquee-content {
+  @apply flex gap-4 lg:gap-10;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause animation on hover */
+.marquee-container:hover {
+  animation-play-state: paused;
+}
+
+#navbar.floating {
+  @apply bg-white rounded-[20px] lg:px-4 xl:px-5 w-[95%] md:w-[90%] lg:w-[95%] xl:w-[100%] top-3 max-w-[1300px] shadow;
+}
