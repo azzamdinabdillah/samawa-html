@@ -2,7 +2,6 @@
 // - Open trigger: [data-open-modal="targetId"]
 // - Close trigger: [data-close-modal] (inside the target modal)
 // It toggles classes on the .modal-container with matching id
-console.log("Modal script loaded");
 
 (function () {
   function getContainerById(id) {
