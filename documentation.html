@@ -128,6 +128,14 @@
         padding: 20px;
         margin: 15px 0;
         font-family: "Courier New", monospace;
+        overflow-x: auto;
+      }
+
+      .file-structure pre {
+        white-space: pre;
+        overflow-x: auto;
+        margin: 0;
+        min-width: 400px;
       }
 
       .file-structure .folder {
@@ -141,6 +149,27 @@
 
       .file-structure .indent {
         margin-left: 20px;
+      }
+
+      /* Fix list alignment */
+      ul,
+      ol {
+        padding-left: 20px;
+      }
+
+      li {
+        margin: 8px 0;
+        padding-left: 0;
+      }
+
+      .section ul li,
+      .section ol li {
+        margin: 8px 0;
+        padding-left: 0;
+      }
+
+      .step-list li {
+        padding-left: 2rem !important;
       }
 
       .feature-grid {
@@ -242,6 +271,18 @@
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
       }
 
+      .table-container {
+        overflow-x: auto;
+        margin: 20px 0;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .table-container .table {
+        margin: 0;
+        min-width: 600px;
+      }
+
       .table th {
         background: #ff48b6;
         color: white;
@@ -262,7 +303,7 @@
       .toc {
         background: #f8f9fa;
         border-radius: 10px;
-        padding: 25px;
+        /* padding: 25px; */
         margin-bottom: 30px;
       }
 
@@ -534,47 +575,49 @@
           </div>
 
           <h3>Interactive Components:</h3>
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Component</th>
-                <th>File</th>
-                <th>Function</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Mobile Navigation</td>
-                <td>navbar.js</td>
-                <td>Hamburger menu for mobile</td>
-              </tr>
-              <tr>
-                <td>Modal Popup</td>
-                <td>modal.js</td>
-                <td>Popup for forms and information</td>
-              </tr>
-              <tr>
-                <td>Date Picker</td>
-                <td>datepicker.js</td>
-                <td>Date selector for booking (UI only)</td>
-              </tr>
-              <tr>
-                <td>Image Carousel</td>
-                <td>swiper.js</td>
-                <td>Automatic image slider</td>
-              </tr>
-              <tr>
-                <td>FAQ Accordion</td>
-                <td>accordion.js</td>
-                <td>Expandable FAQ section</td>
-              </tr>
-              <tr>
-                <td>File Upload</td>
-                <td>upload-input.js</td>
-                <td>File upload with preview (UI only)</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="table-container">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Component</th>
+                  <th>File</th>
+                  <th>Function</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Mobile Navigation</td>
+                  <td>navbar.js</td>
+                  <td>Hamburger menu for mobile</td>
+                </tr>
+                <tr>
+                  <td>Modal Popup</td>
+                  <td>modal.js</td>
+                  <td>Popup for forms and information</td>
+                </tr>
+                <tr>
+                  <td>Date Picker</td>
+                  <td>datepicker.js</td>
+                  <td>Date selector for booking (UI only)</td>
+                </tr>
+                <tr>
+                  <td>Image Carousel</td>
+                  <td>swiper.js</td>
+                  <td>Automatic image slider</td>
+                </tr>
+                <tr>
+                  <td>FAQ Accordion</td>
+                  <td>accordion.js</td>
+                  <td>Expandable FAQ section</td>
+                </tr>
+                <tr>
+                  <td>File Upload</td>
+                  <td>upload-input.js</td>
+                  <td>File upload with preview (UI only)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
 
         <div class="section" id="customization">
@@ -634,47 +677,49 @@
           <h3>Tailwind CSS Custom Classes</h3>
           <p>The template uses Tailwind CSS with predefined custom classes:</p>
 
-          <table class="table">
-            <thead>
-              <tr>
-                <th>Class</th>
-                <th>Function</th>
-                <th>Responsive</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>.text-14</td>
-                <td>Font size 12px → 14px</td>
-                <td>✓</td>
-              </tr>
-              <tr>
-                <td>.text-16</td>
-                <td>Font size 14px → 16px</td>
-                <td>✓</td>
-              </tr>
-              <tr>
-                <td>.text-24</td>
-                <td>Font size 18px → 24px</td>
-                <td>✓</td>
-              </tr>
-              <tr>
-                <td>.text-30</td>
-                <td>Font size 22px → 30px</td>
-                <td>✓</td>
-              </tr>
-              <tr>
-                <td>.py-70</td>
-                <td>Padding vertical 32px → 70px</td>
-                <td>✓</td>
-              </tr>
-              <tr>
-                <td>.px-global</td>
-                <td>Global horizontal padding</td>
-                <td>✓</td>
-              </tr>
-            </tbody>
-          </table>
+          <div class="table-container">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Class</th>
+                  <th>Function</th>
+                  <th>Responsive</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>.text-14</td>
+                  <td>Font size 12px → 14px</td>
+                  <td>✓</td>
+                </tr>
+                <tr>
+                  <td>.text-16</td>
+                  <td>Font size 14px → 16px</td>
+                  <td>✓</td>
+                </tr>
+                <tr>
+                  <td>.text-24</td>
+                  <td>Font size 18px → 24px</td>
+                  <td>✓</td>
+                </tr>
+                <tr>
+                  <td>.text-30</td>
+                  <td>Font size 22px → 30px</td>
+                  <td>✓</td>
+                </tr>
+                <tr>
+                  <td>.py-70</td>
+                  <td>Padding vertical 32px → 70px</td>
+                  <td>✓</td>
+                </tr>
+                <tr>
+                  <td>.px-global</td>
+                  <td>Global horizontal padding</td>
+                  <td>✓</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
           <h3>Color Palette</h3>
           <div class="file-structure">
@@ -919,7 +964,7 @@
           professional and modern website.
         </p>
         <p>
-          <strong>Version:</strong> 1.0.0 | <strong>Last Updated:</strong> 2024
+          <strong>Version:</strong> 1.0.0 | <strong>Last Updated:</strong> 2025
         </p>
       </div>
     </div>
