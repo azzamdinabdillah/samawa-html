@@ -1,3 +1,17 @@
+/**
+ * Simple tab switcher for checkout payment methods.
+ *
+ * Behavior:
+ * - Clicking a `.payment-tab` marks it as active (bold border and brand color)
+ * - Deactivates all other tabs
+ * - Hides all `.tab-panel` elements
+ * - Shows the panel whose id is `${data-tab}-content`
+ *
+ * Requirements:
+ * - Each tab has a `data-tab` attribute (e.g., data-tab="bank-transfer")
+ * - The corresponding panel id must be `<data-tab>-content` (e.g., `bank-transfer-content`)
+ */
+
 document.addEventListener("DOMContentLoaded", function () {
   const paymentTabs = document.querySelectorAll(".payment-tab");
   const tabPanels = document.querySelectorAll(".tab-panel");
@@ -22,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
         panel.classList.remove("active");
       });
 
-      // Show target tab panel
+      // Show target tab panel by convention: `${data-tab}-content`
       const targetPanel = document.getElementById(`${targetTab}-content`);
       if (targetPanel) {
         targetPanel.classList.remove("hidden");

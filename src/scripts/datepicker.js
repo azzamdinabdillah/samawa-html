@@ -1,8 +1,15 @@
-// Ambil semua elemen dengan class "datepicker-input"
+/**
+ * Initialize inline MCDatepicker instances for all inputs with class "datepicker-input".
+ * - Each input is targeted by its unique id (required): `#<inputId>`
+ * - The picker is rendered inline (not as a modal), using the theme below.
+ * - Colors are customized to match the brand (primary: #ff48b6).
+ */
+
+// Select all inputs with class "datepicker-input"
 const datepickerInputs = document.querySelectorAll(".datepicker-input");
 datepickerInputs.forEach(function (input) {
   const inputId = input.id;
-  // Buat instance MCDatepicker untuk setiap input
+  // Create an MCDatepicker instance for each input
   const picker = MCDatepicker.create({
     el: `#${inputId}`,
     bodyType: "inline",
