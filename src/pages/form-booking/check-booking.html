@@ -31,7 +31,11 @@
         class="flex justify-between items-center w-full max-w-[1300px] mx-auto px-4 md:px-6 xl:px-0"
       >
         <a href="/" class="flex items-center gap-2.5">
-          <img src="/icons/logo.svg" alt="" class="w-8 h-8 lg:w-10 lg:h-10" />
+          <img
+            src="/public/icons/logo.svg"
+            alt=""
+            class="w-8 h-8 lg:w-10 lg:h-10"
+          />
           <p class="text-24 text-black font-bold">Samawa</p>
         </a>
         <!-- Desktop Menu - hidden on mobile, visible on tablet and desktop -->
@@ -97,7 +101,7 @@
       <div class="flex flex-col h-full p-6">
         <div class="flex justify-between items-center mb-8">
           <div class="flex items-center gap-2.5">
-            <img src="/icons/logo.svg" alt="" />
+            <img src="/public/icons/logo.svg" alt="" />
             <p class="text-2xl text-black font-bold">Samawa</p>
           </div>
           <button id="close-drawer" class="p-2">
@@ -190,7 +194,7 @@
                       <img
                         alt="input icon"
                         class="block max-w-none size-full"
-                        src="/icons/note-favorite.svg"
+                        src="/public/icons/note-favorite.svg"
                       />
                     </div>
                     <input
@@ -228,7 +232,7 @@
                       <img
                         alt="input icon"
                         class="block max-w-none size-full"
-                        src="/icons/call.svg"
+                        src="/public/icons/call.svg"
                       />
                     </div>
                     <input
@@ -293,8 +297,7 @@
                 <!-- Social Media -->
                 <div class="flex gap-3">
                   <a
-                    href="https://wa.me/6282112345678"
-                    target="_blank"
+                    href="#"
                     rel="noopener"
                     class="w-9 h-9 bg-green-500 rounded-lg flex items-center justify-center hover:bg-green-600 transition-colors"
                   >
@@ -309,8 +312,7 @@
                     </svg>
                   </a>
                   <a
-                    href="https://instagram.com/samawa"
-                    target="_blank"
+                    href="#"
                     rel="noopener"
                     class="w-9 h-9 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 rounded-lg flex items-center justify-center hover:opacity-90 transition-opacity"
                   >
@@ -325,8 +327,7 @@
                     </svg>
                   </a>
                   <a
-                    href="https://facebook.com/samawa"
-                    target="_blank"
+                    href="#"
                     rel="noopener"
                     class="w-9 h-9 bg-blue-600 rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors"
                   >
@@ -341,8 +342,7 @@
                     </svg>
                   </a>
                   <a
-                    href="https://tiktok.com/@samawa"
-                    target="_blank"
+                    href="#"
                     rel="noopener"
                     class="w-9 h-9 bg-black rounded-lg flex items-center justify-center hover:bg-gray-800 transition-colors"
                   >
@@ -568,8 +568,6 @@
     ></script>
     <script type="module" src="/src/scripts/accordion.js"></script>
     <script type="module" src="/src/scripts/tabs-checkout.js"></script>
-    <script type="module" src="/src/scripts/change-path.js"></script>
-    <!-- /samawa is root folder if you put in sub folder -->
-    <script type="module" src="/samawa/src/scripts/change-path.js"></script>
+    <script type="module" src="/src/scripts/fix-a-href-path.js"></script>
   </body>
 </html>
